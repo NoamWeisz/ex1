@@ -56,15 +56,3 @@ bool isFull(Queue* s)
 	return 0;
 }
 
-
-/*unneccesery*/
-void printQueue(Queue* q)
-{
-	int i = 0;
-	printf("\n");
-	for (i = 0;i < (q->_size);i++)
-	{
-		printf(" %d ", q->_array[i]);
-	}
-	printf("\n");
-}
