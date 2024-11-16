@@ -6,7 +6,9 @@
 /* a queue contains positive integer values. */
 typedef struct Queue
 {
-	// Complete the definition here
+	int* _array;
+	int _size;
+	int _count;
 
 } Queue;
 
@@ -18,5 +20,6 @@ int dequeue(Queue* q); // return element in top of queue, or -1 if empty
 
 bool isEmpty(Queue* s);
 bool isFull(Queue* s);
+void printQueue(Queue* q);
 
 #endif /* QUEUE_H */

@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b45836a0-fbaf-4502-9448-6a87b4fb82ad}</ProjectGuid>
-    <RootNamespace>LESSON1</RootNamespace>
+    <ProjectGuid>{34d64657-542e-42e0-9ef2-b86d20129fa5}</ProjectGuid>
+    <RootNamespace>lesson1NOAMWEISZ</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="0.cpp" />
+    <ClInclude Include="Queue.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main1.cpp" />
+    <ClCompile Include="Part1Tester.cpp" />
+    <ClCompile Include="Queue.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
