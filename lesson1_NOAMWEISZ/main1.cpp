@@ -1,7 +1,7 @@
-/*
+
 #include "Queue.h"
 #include <iostream>
-#include <stdio.h>
+
 
 int main()
 {
@@ -12,12 +12,11 @@ int main()
 	unsigned int size = 0;
 	while (flag)
 	{	
-		printf("1- create tour\n 2 - clean tour \n 3- input elemnt");
+		std::cout << "1- create queue\n 2 - clean queue \n 3- input elemnt\n 4- print queue\n 5- remove 1 index\n 6 - check if empty\n 7 - check if full" << std::endl;
 		std::cin >> num;
 		if (num == 1)
 		{
-
-			printf("enter size");
+			std::cout << "enter size" << std::endl;
 			std::cin >> size;
 			initQueue(arr, size);
 
@@ -28,35 +27,31 @@ int main()
 		}
 		if (num == 3)
 		{
-			printf("enter element");
+			std::cout << "enter element" << std::endl;
 			std::cin >> element;
 			enqueue(arr, element);
 		}
 		if (num == 4)
 		{
 			int i = 0;
-			for (i = 0;i <= arr->_count;i++)
+			for (i = 0;i < (arr->_count);i++)
 			{
-				printf("%d", arr[i]);
+				std::cout <<" " << arr->_array[i];
 			}
+			std::cout << ""  << std::endl;
 		}
 		if (num == 5)
 		{
-			printQueue(arr);
+			dequeue(arr);
 		}
 		if (num == 6)
 		{
-			dequeue(arr);
-		}
-		if (num == 7)
-		{
 			printf("\n Check %d\n", isEmpty(arr));
 		}
-		if (num == 8)
+		if (num == 7)
 		{
 			printf("\n check full %d\n", isFull(arr));
 		}
 	}
 
 }
-*/

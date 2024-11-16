@@ -14,8 +14,8 @@ void cleanQueue(Queue* q)
 {
 	if (q->_array != nullptr) 
 {
-		delete[] q->_array;   // Properly delete the array
-		q->_array = nullptr;  // Reset the pointer to avoid dangling
+		delete[] q->_array; 
+		q->_array = nullptr; 
 	}
 }
 void enqueue(Queue* q, unsigned int newValue)
@@ -35,24 +35,24 @@ int dequeue(Queue* q)
 	q->_count--;
 	return firstIndex;
 }
-// return element in top of queue, or -1 if empty
+
 
 bool isEmpty(Queue* s)
 {
 
 	if (s->_count == 0)
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 bool isFull(Queue* s)
 {
 	if (s->_count == s->_size)
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
