@@ -5,11 +5,11 @@
 
 typedef struct List
 {
-	unsigned int node;
-	List* next;
+	unsigned int _node;
+	List* _next;
 }List;
 
-void addNode(List* q, unsigned int value);
-void deleteNode(List** q);
-void printList(List* q);
+void addNode(List* s, unsigned int value);
+void deleteNode(List* s);
+void printList(List* s);
 #endif

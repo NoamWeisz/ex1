@@ -5,34 +5,32 @@
 
 
 
-void addNode(List* q,unsigned int value)
+void addNode(List* s,unsigned int value)
 {
-	List *current_q = NULL;
-	current_q = q;
-	while (current_q->next != NULL)
+	List *current_s = NULL;
+	current_s = s;
+	while (current_s->_next != NULL)
 	{
-		current_q = current_q->next;
+		current_s = current_s->_next;
 	}
-	current_q->next = new List;
-	current_q->next->node = value;
-	current_q->next->next = NULL;
+	current_s->_next = new List;
+	current_s->_next->_node = value;
+	current_s->_next->_next = NULL;
 }
-
-void deleteNode(List* q)
+void deleteNode(List* s)
 {
-	List* current_q = q;
-	List* oneBeforeEnd = q;
-	List** blankArea = NULL;
-	while (current_q ->next != NULL)
+	List* current_s = s;
+	List* oneBeforeEnd = s;
+	while (current_s ->_next != NULL)
 	{
-		if (current_q->next->next == NULL)
+		if (current_s->_next->_next == NULL)
 		{
-			oneBeforeEnd = current_q;
+			oneBeforeEnd = current_s;
 		}
-		current_q = current_q->next;
+		current_s = current_s->_next;
 	}
-	oneBeforeEnd->next = NULL;
-	delete(current_q);
-	current_q = NULL;
+	oneBeforeEnd->_next = NULL;
+	delete(current_s);
+	current_s = NULL;
 
 }
