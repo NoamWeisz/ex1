@@ -2,7 +2,7 @@
 #include "Queue.h"
 #include <iostream>
 
-
+//main function in order to check my code.
 int main()
 {
 	Queue *arr = new Queue;

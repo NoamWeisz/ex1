@@ -3,13 +3,14 @@
 #include <iostream>
 
 
-
+//initQueue set a new queue
 void initQueue(Queue* q, unsigned int size)
 {
 	q->_count = 0;
 	q->_size = size;
 	q->_array = new int[size];
 }
+//cleanQueue relese the memory in the heap
 void cleanQueue(Queue* q)
 {
 	if (q->_array != nullptr) 
@@ -18,11 +19,15 @@ void cleanQueue(Queue* q)
 		q->_array = nullptr; 
 	}
 }
+//enqueue set new index with new value in the queue
 void enqueue(Queue* q, unsigned int newValue)
 {
 	q->_array[q->_count] = newValue;
 	q->_count++;
 }
+
+//dequeue remove the first index from the queue
+
 int dequeue(Queue* q)
 {
 	int i = 0;
@@ -36,6 +41,7 @@ int dequeue(Queue* q)
 	return firstIndex;
 }
 
+//isEmpty check if the queue is empty
 
 bool isEmpty(Queue* s)
 {
@@ -46,6 +52,8 @@ bool isEmpty(Queue* s)
 	}
 	return false;
 }
+
+//isFull check if the queue is full
 
 bool isFull(Queue* s)
 {
