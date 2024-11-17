@@ -3,12 +3,14 @@
 #include "Utlis.h"
 #include "LinkedList.h"
 
+//initStack set new stack
 void initStack(Stack *s)
 {
 	s->_NumsList = new List;
 	s->_NumsList->_next = NULL;
 	s->_countNode = 0;
 }
+//cleanStack clean all the memory inside the stack, but not the stack itself
 
 void cleanStack(Stack* s)
 {
@@ -30,15 +32,58 @@ void cleanStack(Stack* s)
 		firstnode = next;
 	}
 }
+
+//push add to the stack new node
+
 void push(Stack* s, unsigned int element)
 {
 	addNode(s->_NumsList, element);
 	s->_countNode++;
 }
+
+//reverse is function that get array and make it reversed
+
 void reverse(int* nums, unsigned int size)
 {
+	int i = 0;
+	int y = 0;
+	int currentNum = 0;
+	Stack* Rstack = new Stack;
+	initStack(Rstack);
+	Rstack->_NumsList->_node = nums[0];
+	for (i = 1;i < (size);i++)
+	{
+		push(Rstack, nums[i]);
+	}
+
+	for (y = 0;y < size;y++)
+	{
+		currentNum = pop(Rstack);
+
+		nums[y] = currentNum;
+	}
+	cleanStack(Rstack);
+	delete(Rstack);
 
 }
+
+//reverse10 is function that set new array with in size of 10 and reverse the array 
+
+int* reverse10()
+{
+	int* nums = new int[10];
+	unsigned int curNum = 0;
+	int i = 0;
+	for (i = 0;i < 10;i++)
+	{
+		std::cout << "enter num number " << (i + 1) << " ";
+		std::cin >> curNum;
+		nums[i] = curNum;
+	}
+	reverse(nums, 10);
+	return nums;
+}
+//pop is function that remove the last node in the stack
 int pop(Stack* s)
 {
 	List* currentnode = s->_NumsList;
@@ -67,6 +112,9 @@ int pop(Stack* s)
 	
 
 }
+
+//isEmpty is function that check if the stack is empty
+
 bool isEmpty(Stack* s)
 {
 	if (!s->_countNode)
@@ -75,40 +123,9 @@ bool isEmpty(Stack* s)
 	}
 	return false;
 }
+//isFull is function that check if the stack is full
+
 bool isFull(Stack* s)
 {
 	return false;
 }
-/*
-int main()
-{
-	int nums[10];
-	nums[0] = 1;
-	nums[1] = 2;
-	nums[2] = 3;
-	nums[3] = 4;
-	nums[4] = 5;
-	nums[5] = 6;
-	nums[6] = 7;
-	nums[7] = 8;
-	nums[8] = 9;
-	nums[9] = 10;
-	reverse(nums, 10);
-
-
-}
-void printList(List* q)
-{
-	if (q != NULL)
-	{
-		List* current_q = q;
-		while (current_q != NULL)
-		{
-			printf(" %d ", current_q->node);
-			current_q = current_q->next;
-		}
-	}
-
-	printf("\n");
-}
-*/

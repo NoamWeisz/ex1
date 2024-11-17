@@ -1,10 +1,20 @@
+
 #include <iostream>
 #include "Stack.h"
 #include "LinkedList.h"
 #include "Utlis.h"
 
+//main function in order to check my code.
+
 int main()
 {
+	int* array = NULL;
+	array =	reverse10();
+	for (int y = 0; y < 10;y++)
+	{
+		std::cout << "index number: " << y << ": is " << array[y] << std::endl;
+	}
+	delete(array);
 	int i = 0;
 	Stack* check = new Stack;
 	int nums[10];
@@ -25,11 +35,12 @@ int main()
 	{
 		push(check, nums[i]);
 	}
-	
+	std::cout << std::endl;
 	printList(check->_NumsList);
 	cleanStack(check);
 	delete(check);
 }
+//printList function to check the stack and print it.
 void printList(List* s)
 {
 	if (s != NULL)

@@ -4,7 +4,7 @@
 
 
 
-
+//addNode add new node to the list
 void addNode(List* s,unsigned int value)
 {
 	List *current_s = NULL;
@@ -17,6 +17,7 @@ void addNode(List* s,unsigned int value)
 	current_s->_next->_node = value;
 	current_s->_next->_next = NULL;
 }
+//delete node delete the last node from the list
 void deleteNode(List* s)
 {
 	List* current_s = s;
