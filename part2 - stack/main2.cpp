@@ -27,7 +27,8 @@ int main()
 	}
 	
 	printList(check->_NumsList);
-
+	cleanStack(check);
+	delete(check);
 }
 void printList(List* s)
 {
