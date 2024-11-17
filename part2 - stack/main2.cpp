@@ -37,10 +37,9 @@ void printList(List* s)
 		List* current_s = s;
 		while (current_s != NULL)
 		{
-			printf(" %d ", current_s->_node);
+			std::cout << current_s->_node << " ";
 			current_s = current_s->_next;
 		}
 	}
 
-	printf("\n");
 }
